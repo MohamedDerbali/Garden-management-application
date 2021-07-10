@@ -1,0 +1,10 @@
+produit_produit:
+    resource: "@ProduitBundle/Resources/config/routing/produit.yml"
+    prefix:   /produit
+
+client:
+    path:     /index
+    defaults: { _controller: ProduitBundle:Default:index }
+admin:
+    path:     /admin
+    defaults: { _controller: ProduitBundle:Default:indexAD }

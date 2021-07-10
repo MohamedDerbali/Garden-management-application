@@ -1,0 +1,57 @@
+
+{% block body %}
+
+    <h1>Event</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idevent</th>
+                <td>{{ event.idEvent }}</td>
+            </tr>
+            <tr>
+                <th>Datedeb</th>
+                <td>{% if event.dateDeb %}{{ event.dateDeb|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ event.description }}</td>
+            </tr>
+            <tr>
+                <th>Adresseevent</th>
+                <td>{{ event.adresseEvent }}</td>
+            </tr>
+            <tr>
+                <th>Nomevent</th>
+                <td>{{ event.nomEvent }}</td>
+            </tr>
+            <tr>
+                <th>Fraisparticpation</th>
+                <td>{{ event.fraisParticpation }}</td>
+            </tr>
+            <tr>
+                <th>Nbre_participant</th>
+                <td>{{ event.nbreparticipant }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ event.img }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('events_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('events_edit', { 'idEvent': event.idEvent }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+{% endblock %}

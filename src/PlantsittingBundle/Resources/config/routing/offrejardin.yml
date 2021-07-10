@@ -1,0 +1,24 @@
+offrejardin_index:
+    path:     /
+    defaults: { _controller: "PlantsittingBundle:OffreJardin:index" }
+    methods:  GET
+
+offrejardin_show:
+    path:     /show/{idOffreJardin}
+    defaults: { _controller: "PlantsittingBundle:OffreJardin:show" }
+    methods:  GET
+
+offrejardin_new:
+    path:     /new
+    defaults: { _controller: "PlantsittingBundle:OffreJardin:new" }
+    methods:  [GET, POST]
+
+offrejardin_edit:
+    path:     /{idOffreJardin}/edit
+    defaults: { _controller: "PlantsittingBundle:OffreJardin:edit" }
+    methods:  [GET, POST]
+
+offrejardin_delete:
+    path:     /{idOffreJardin}/delete
+    defaults: { _controller: "PlantsittingBundle:OffreJardin:delete" }
+    methods:  DELETE

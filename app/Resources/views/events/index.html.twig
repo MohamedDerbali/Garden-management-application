@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div> <h1>Events list</h1>
+
+        <table>
+            <thead>
+            <tr>
+
+                <th>Datedeb</th>
+                <th>Description</th>
+                <th>Adresseevent</th>
+                <th>Nomevent</th>
+                <th>Fraisparticpation</th>
+                <th>Nbre_participant</th>
+                <th>Img</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+
+                    <td>{% if event.dateDeb %}{{ event.dateDeb|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ event.description }}</td>
+                    <td>{{ event.adresseEvent }}</td>
+                    <td>{{ event.nomEvent }}</td>
+                    <td>{{ event.fraisParticpation }}</td>
+                    <td>{{ event.nbreparticipant }}</td>
+                    <td>{{ event.img }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('events_show', { 'idEvent': event.idEvent }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('events_edit', { 'idEvent': event.idEvent }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('events_new') }}">Create a new event</a>
+            </li>
+        </ul></div>
+
+{% endblock %}

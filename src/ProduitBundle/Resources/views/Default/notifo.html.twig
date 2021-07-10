@@ -1,0 +1,31 @@
+<div>
+    <br><br>
+    <br><br>
+    <h5>Notifications</h5>
+    <br><br>
+    <table border="1">
+
+
+        {% for notification in notifications %}
+        <tr>
+            <td>titre</td>
+            <td>  {{ notification.title }}</td>
+        </tr>
+        <tr><td>description</td>
+            <td>   {{ notification.description }}</td>
+        </tr>
+        <tr>
+            <td>voir</td>
+            <td>     <a href="#">voir</a></td>
+        </tr>
+        <tr>
+            {% else %}
+                <td>liste</td>
+                <td>liste vide</td>
+
+            {% endfor %}
+        </tr>
+
+
+    </table>
+</div>

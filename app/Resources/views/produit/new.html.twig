@@ -1,0 +1,180 @@
+{% extends 'Admin.html.twig' %}
+
+{% block body %}
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Ajouter Produit</strong>
+        </div>
+
+        <div class="card-body card-block">
+            <form action="#" method="post" enctype="#" class="table" >
+
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nom  :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.nom, {'attr': { 'placeholder': 'nom' ,'class' : 'form-control' }})}}
+                     </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">image :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.image, {'attr': { 'placeholder': 'image' ,'class' : 'form-control' }})}}
+                     </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.description, {'attr': { 'placeholder': 'description' ,'class' : 'form-control' }})}}
+                     </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">prix :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.prix, {'attr': { 'placeholder': 'prix' ,'class' : 'form-control' }})}}
+                     </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">quantite :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.quantite, {'attr': { 'placeholder': 'quantite' ,'class' : 'form-control' }})}}
+                     </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">categorie :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.categorieproduit, {'attr': { 'placeholder': 'Catégorie produit' ,'class' : 'form-control' }})}}
+                     </div>
+
+               </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">categorie :</label></div>
+                    <div class="col-12 col-md-9">
+                        {{ form_widget(form.categorieplants, {'attr': { 'placeholder': 'Catégorie plants ' ,'class' : 'form-control' }})}}
+                    </div>
+                </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Types :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.types, {'attr': { 'placeholder': 'Types' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Durée de vie :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.dureVie, {'attr': { 'placeholder': 'Durée de vie' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Origine :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.origine, {'attr': { 'placeholder': 'Origine' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Poids :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.poids, {'attr': { 'placeholder': 'Poids' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Saison :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.saison, {'attr': { 'placeholder': 'Saison' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Taille :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.taille, {'attr': { 'placeholder': 'Taille' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Couleur :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.couleur, {'attr': { 'placeholder': 'Couleur' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Référence :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.reference, {'attr': { 'placeholder': 'Références' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Marque :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.marque, {'attr': { 'placeholder': 'Marque' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Titre :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.titre, {'attr': { 'placeholder': 'Titre' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">autheur :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.auteur, {'attr': { 'placeholder': 'autheur' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Temps vie :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(form.tempsvie, {'attr': { 'placeholder': 'Temps de vie' ,'class' : 'form-control' }})}}
+                        </div>
+                    </div>
+
+
+
+                <div class="card-footer">
+
+
+                    {{ form_widget(form) }}
+                    <center>     <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Ajouter
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                            <i class="fa fa-ban"></i> Annuler
+                        </button>
+                    </center>
+                </div>
+                {{ form_end(form) }}
+                    </form>
+        </div>
+        <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
+        <script>
+                $(document).ready(function() {
+                    $("#produitbundle_produit_categorieproduit").click(function(){
+                        var e = document.getElementById("produitbundle_produit_categorieproduit");
+                        var str = e.options[e.selectedIndex].text;
+                        if( str == "Plante")
+                        {
+                            $("#produitbundle_produit_origine").css("display","none");
+                        }
+                        else
+                        {
+                            $("#produitbundle_produit_origine").css("display","flex");
+                        }
+                    });
+
+                    /*$(wrapper).on("click",".remove_field", function(e){ //user click on remove field
+                        e.preventDefault(); $(this).parent('div').remove(); x--;
+                    })*/
+                });
+        </script>
+
+
+    </div>
+</div>
+{% endblock %}

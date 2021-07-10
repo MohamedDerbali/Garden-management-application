@@ -1,0 +1,4 @@
+plantsitting_homepage:
+    path:     /homepage
+    defaults: { _controller: PlantsittingBundle:Default:index }
+

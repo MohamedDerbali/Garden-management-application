@@ -1,0 +1,85 @@
+{% extends 'Admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Produits :</h1>
+
+
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+
+
+                                    <center>
+                                        <button type="button" class="btn btn-primary"><a href="{{ path('produit_new') }}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ajouter Produit</font></font></a></button>
+
+                                    </center>
+
+                                    <th>Id</th>
+                                    <th>Nom</th>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Catégorie Produit</th>
+                                    <th>Quantité</th>
+                                    <th>Prix</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for produit in produits %}
+                                    <tr>
+                                        <td>{{ produit.idProduit }}</td>
+                                        <td>{{ produit.nom }}</td>
+                                        <td>{{ produit.image }}</td>
+                                        <td>{{ produit.description }}</td>
+                                        <td>{{ produit.categorieProduit }}</td>
+                                        <td>{{ produit.quantite }}</td>
+                                        <td>{{ produit.prix }}</td>
+
+
+
+                                        <td>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        <li>
+
+
+                                                            <button type="button" class="btn btn-outline-secondary"><a href="{{ path('produit_show', { 'idProduit': produit.idProduit }) }}"><i class="fa fa-lightbulb-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp; Afficher</font></font></a></button>
+
+
+                                                        </li>
+                                                        <br>
+                                                        <li>
+
+
+                                                            <button type="button" class="btn btn-outline-danger"><a href="{{ path('produit_edit', { 'idProduit': produit.idProduit }) }}"> <i class="fa fa-magic"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp; Modifier</font></font></a></button>
+
+
+
+
+                                                            </button>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

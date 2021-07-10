@@ -1,0 +1,226 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        {% block title %} Modifier Profile {% endblock %}
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{{ asset('login/images/icons/favicon.ico') }}"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animate/animate.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/css-hamburgers/hamburgers.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animsition/css/animsition.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/select2/select2.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/daterangepicker/daterangepicker.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/main.css') }}">
+        <style>
+            #align_allsections
+            {
+                display: flex;
+                justify-content: center;
+            }
+            #section1
+            {
+                position: relative;
+                right: 35px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+            }
+            #section2
+            {
+                position: relative;
+                left: 35px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+            }
+            /*form cadre*/
+            .limiter
+            {
+                position: relative;
+                top: 40px;
+            }
+            /*input=user on click(focus)*/
+            #fos_user_profile_form_email,
+            #fos_user_profile_form_username,
+            #fos_user_profile_form_current_password,
+            #fos_user_profile_form_nom,
+            #fos_user_profile_form_prenom,
+            #fos_user_profile_form_adresse
+            {
+                font-size: 15px;
+                line-height: 1.5;
+                color: #666666;
+                display: block;
+                width: 100%;
+                background: #e6e6e6;
+                height: 50px;
+                border-radius: 10px;
+                padding: 0 25px 0 60px;
+                border: none;
+                transition: all .5s;
+            }
+            /*input=user role*/
+            #fos_user_profile_form_roles
+            {
+                font-size: 15px;
+                line-height: 1.5;
+                color: #666666;
+                display: block;
+                width: 100%;
+                background: #e6e6e6;
+                height: 50px;
+                border-radius: 10px;
+                padding: 0 25px 0 60px;
+                border: none;
+                transition: all .5s;
+                padding-top: 5px;
+                overflow: hidden;
+            }
+            /*inputs=user*/
+            #fos_user_profile_form_email:focus,
+            #fos_user_profile_form_username:focus,
+            #fos_user_profile_form_current_password:focus,
+            #fos_user_profile_form_plainPassword_first:focus,
+            #fos_user_profile_form_nom:focus,
+            #fos_user_profile_form_prenom:focus,
+            #fos_user_profile_form_adresse:focus
+            {
+                border: 2px solid #0fc491;
+                transition: all .5s;
+            }
+            /*input=user signup btn*/
+            #signup-btn
+            {
+                margin-top: 20px;
+                font-size: 10px;
+                line-height: 1.5;
+                color: #fff;
+                display: block;
+                width: 80%;
+                background: #0d1248;
+                height: 50px;
+                border-radius: 10px;
+                padding: 0 25px 0 60px;
+                border: none;
+            }
+        </style>
+        {#<style type="text/css">#}
+        {##username{#}
+        {#background-color:whitesmoke;#}
+        {#height: 10px;#}
+        {#padding: 15px;#}
+        {#width: 40%;#}
+
+        {#}#}
+        {##password{#}
+        {#background-color:whitesmoke;#}
+        {#height: 10px;#}
+        {#width: 40%;#}
+        {#padding: 15px;#}
+
+        {#}#}
+
+        {#</style>#}
+
+        <!--===============================================================================================-->
+    </head>
+
+    <body>
+
+    </body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url('{{ asset('images/edit.jpg') }}');">
+					<span class="login100-form-title-1">
+						Modifier profile
+					</span>
+
+                </div>
+                <center>
+                {% trans_default_domain 'FOSUserBundle' %}
+                <div style="display: flex;flex-direction: column;align-items: center">
+                    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                    {{ form_row(form.nom ) }}
+                    {{ form_row(form.prenom ) }}
+                    {{ form_row(form.adresse ) }}
+                    <i class="categorie">
+                     {{ form_row(form.categorie) }}
+                    </i>
+
+                    {{ form_widget(form) }}
+                    {% if is_granted('ROLE_CLIENT') %}
+
+                        <script type="application/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+                             <script>
+                        $(".categorie").hide();
+                        </script>
+
+
+                    {% endif %}
+
+
+
+                    <div>
+                        <input class="btn btn--primary" type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+
+                </center>
+            </div>
+        </div>
+
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/animsition/js/animsition.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/bootstrap/js/popper.js') }}"></script>
+        <script src="{{ asset('login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/select2/select2.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/daterangepicker/moment.min.js') }}"></script>
+        <script src="{{ asset('login/vendor/daterangepicker/daterangepicker.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/countdowntime/countdowntime.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/js/main.js') }}"></script>
+        {#//for signup#}
+        <script src="{{ asset('js/Signup/verif.js') }}"></script>
+    </html>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

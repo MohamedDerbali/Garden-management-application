@@ -1,0 +1,43 @@
+{% extends 'Admin.html.twig' %}
+{% block selfdesign %}
+
+    <style>
+        .cat{
+            width:800px;
+            margin:0 auto;
+        }
+        .h1{
+            color:#17a2b8;
+        }
+    </style>
+
+{% endblock %}
+    {% block body %}
+    <center><h1 class="h1">Ajouter une Categorie d'évenement</h1></center>
+        <br/>
+        <br/>
+<div class="cat">
+<table>
+    {{ form_start(form) }}
+    <div class="form-group">
+     <tr>
+         <td><label>Nom de la categorie:</label></td>
+         <td>{{ form_widget(form.nom) }}</td>
+
+</tr>
+    </div>
+    <div class="form-group">
+        <tr>
+            <td><label>Description de la categorie: </label></td>
+            <td>{{ form_widget(form.description) }}</td>
+
+        </tr>
+
+
+    </div>
+</table>
+
+    <input type="submit" class="btn btn-info" value="Ajouter Categorie" />
+    {{ form_end(form) }}
+</div>
+{% endblock %}

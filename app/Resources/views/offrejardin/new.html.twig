@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url( {{asset('images/bg-img/24.jpg') }});">
+            <h2>DETAIL</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Single Blog Post</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkout_area mb-100">
+        <div class="container">
+            <div class="checkout_area mb-100">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-7">
+                        <div class="checkout_details_area clearfix">
+                            <h5>Billing Details</h5>
+                            <form action="#" method="post" >
+                                <div class="row">
+
+
+                                </div>
+                                {{ form_widget(form) }}
+                                <div class="checkout-btn mt-30">
+                                    <button href="#" class="btn alazea-btn w-100">Ajouter</button>
+                                </div>
+                                <center>
+
+                                    <div class="checkout-btn mt-30">
+                                        <button href="#" class="btn alazea-btn w-100">Annuler</button>
+                                    </div>
+                                </center>
+
+                                {{ form_end(form) }}
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+
+{% endblock %}

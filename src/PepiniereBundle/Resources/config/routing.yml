@@ -1,0 +1,3 @@
+pepiniere_homepage:
+    path:     /aa
+    defaults: { _controller: PepiniereBundle:Default:index }

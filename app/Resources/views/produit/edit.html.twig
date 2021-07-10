@@ -1,0 +1,121 @@
+{% extends 'Admin.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(edit_form) }}
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Modifier</strong>
+            </div>
+
+            <div class="card-body card-block">
+                <form action="#" method="post" enctype="#" class="table" >
+
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nom Du Formation :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(edit_form.nom, {'attr': { 'placeholder': 'nom' ,'class' : 'form-control' }})}}
+                            <small class="help-block form-text">Modifier le nom de produit</small>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">image :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(edit_form.image, {'attr': { 'placeholder': 'image' ,'class' : 'form-control' }})}}
+                            <small class="help-block form-text">Modifier l'image de produit</small>
+
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description  :</label></div>
+                        <div class="col-12 col-md-9">
+
+                            {{ form_widget(edit_form.description, {'type' : 'textarea', 'attr': {'class' : 'form-control' }} ) }}
+                            <small class="help-block form-text">Modifier description</small>
+
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description  :</label></div>
+                        <div class="col-12 col-md-9">
+
+                            {{ form_widget(edit_form.categorieproduit, {'type' : 'textarea', 'attr': {'class' : 'form-control' }} ) }}
+                            <small class="help-block form-text">Modifier categorie</small>
+
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Qte de Produits :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(edit_form.quantite, {'attr': {'type':'text','id':'disabled-input', 'placeholder': 'prix' ,'class' : 'form-control' }})}}
+                            <small class="help-block form-text">Entrer la quantite</small></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Prix Du Produit :</label></div>
+                        <div class="col-12 col-md-9">
+                            {{ form_widget(edit_form.prix, {'attr': {'type':'text','id':'disabled-input', 'placeholder': 'prix' ,'class' : 'form-control' }})}}
+                            <small class="help-block form-text">Entrer le prix de produits</small></div>
+                    </div>
+
+
+
+
+
+
+
+
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="card-body">
+
+
+                    <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#staticModal">
+                        Supprimer
+                    </button>
+                    <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticModalLabel">Suppression</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Vous etes sur de supprimer !!!!
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    {{ form_start(delete_form) }}
+
+
+                                    <button type="submit" class="btn btn-primary">Confirmer</button>
+                                    {{ form_end(delete_form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {{ form_widget(edit_form) }}
+                <center>     <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Valider
+                    </button>
+                    {{ form_end(edit_form) }}
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Annuler
+                    </button>
+                </center>   </div>
+
+
+        </div>
+    </div>
+{% endblock %}

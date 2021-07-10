@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        {% block title %} Se connecter {% endblock %}
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{{ asset('login/images/icons/favicon.ico') }}"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animate/animate.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/css-hamburgers/hamburgers.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animsition/css/animsition.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/select2/select2.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/daterangepicker/daterangepicker.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/main.css') }}">
+
+        <style type="text/css">
+            #username{
+                background-color:whitesmoke;
+                height: 10px;
+                padding: 15px;
+                width: 40%;
+
+            }
+            #password{
+                background-color:whitesmoke;
+                height: 10px;
+                width: 40%;
+                padding: 15px;
+
+            }
+
+        </style>
+
+        <!--===============================================================================================-->
+    </head>
+
+    <body>
+
+
+
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url('{{ asset('login/images/bg-01.jpg') }}');">
+					<span class="login100-form-title-1">
+
+						Se connecter
+					</span>
+
+                </div>
+
+                {% trans_default_domain 'FOSUserBundle' %}
+
+                {% if error %}
+                    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
+                    <center>
+                        <div >
+                            <label>dffffffffffffffff</label>
+                            <label for="username">{{ 'security.login.username'|trans }}</label>
+                            <input  type="text"  id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+                            <label for="password">{{ 'security.login.password'|trans }}</label>
+                            <input  type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+
+                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}&nbsp&nbsp&nbsp&nbsp&nbsp<input  type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            </label>
+                            <center>
+
+                                <input class="btn btn--primary" type="submit" id="_submit" name="_submit" value="se connecter"  /> </center>
+                        </div>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/animsition/js/animsition.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/select2/select2.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/daterangepicker/moment.min.js') }}"></script>
+    <script src="{{ asset('login/vendor/daterangepicker/daterangepicker.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/vendor/countdowntime/countdowntime.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('login/js/main.js') }}"></script>
+
+
+    </html>
+
+{% endblock %}
+
+

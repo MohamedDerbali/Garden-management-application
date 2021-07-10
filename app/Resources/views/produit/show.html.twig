@@ -1,0 +1,104 @@
+{% extends 'Admin.html.twig' %}
+
+{% block body %}
+    <h1>Produit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idproduit</th>
+                <td>{{ produit.idProduit }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ produit.nom }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ produit.image }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>Categorieproduit</th>
+                <td>{{ produit.categorieproduit }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ produit.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ produit.prix }}</td>
+            </tr>
+            <tr>
+                <th>Categorieplants</th>
+                <td>{{ produit.categorieplants }}</td>
+            </tr>
+            <tr>
+                <th>Types</th>
+                <td>{{ produit.types }}</td>
+            </tr>
+            <tr>
+                <th>Durevie</th>
+                <td>{{ produit.dureVie }}</td>
+            </tr>
+            <tr>
+                <th>Origine</th>
+                <td>{{ produit.origine }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ produit.poids }}</td>
+            </tr>
+            <tr>
+                <th>Saison</th>
+                <td>{{ produit.saison }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ produit.taille }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ produit.couleur }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ produit.reference }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ produit.marque }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ produit.titre }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ produit.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Tempsvie</th>
+                <td>{{ produit.tempsvie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('produit_edit', { 'idProduit': produit.idProduit }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

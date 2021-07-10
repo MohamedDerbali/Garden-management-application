@@ -1,0 +1,13 @@
+event_categorieevent:
+    resource: "@EventBundle/Resources/config/routing/categorieevent.yml"
+    prefix:   /categorieevent
+events:
+    resource: "@EventBundle/Resources/config/routing/events.yml"
+    prefix:   /event
+
+event_homepage:
+    path:     /homepage
+    defaults: { _controller: EventBundle:Default:index }
+EventADD:
+    path:     /addEvent
+    defaults: { _controller: PlantsittingBundle:Default:index }

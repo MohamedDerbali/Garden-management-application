@@ -1,0 +1,28 @@
+commande:
+    resource: "@CommandeBundle/Resources/config/routing.yml"
+    prefix:   /commande
+
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /event
+
+annonce:
+    resource: "@AnnonceBundle/Resources/config/routing.yml"
+    prefix:   /annonce
+
+plantsitting:
+    resource: "@PlantsittingBundle/Resources/config/routing.yml"
+    prefix:   /plantsitting
+
+pepiniere:
+    resource: "@PepiniereBundle/Resources/config/routing.yml"
+    prefix:   /a
+produit:
+    resource: "@ProduitBundle/Resources/config/routing.yml"
+    prefix:   /b
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

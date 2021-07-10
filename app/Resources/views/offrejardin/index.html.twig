@@ -1,0 +1,268 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url( {{asset('images/bg-img/24.jpg') }});">
+            <h2>Plantsitting</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="alazea-blog-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        {% for offreJardin in offreJardins %}
+                        <!-- Single Blog Post Area -->
+                        <div class="col-12 col-lg-6">
+                            <div class="single-blog-post mb-50">
+                                <div class="post-thumbnail mb-30">
+                                    <a href="single-post.html"><img src="{{asset('images/bg-img/6.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="post-content">
+
+                                    <a href="{{ path('offrejardin_show',{'idOffreJardin':offreJardin.idOffreJardin}) }}" class="post-title">
+                                        <h5>{{ offreJardin.titre }}</h5>
+                                    </a>
+                                    <div class="post-meta">
+                                        <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> {% if offreJardin.dateDebut %}{{ offreJardin.dateDebut|date('Y-m-d') }}{% endif %}</a>
+                                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ offreJardin.prix }}</a>
+                                    </div>
+                                    <p class="post-excerpt">{{  offreJardin.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="post-sidebar-area">
+
+                        <!-- ##### Single Widget Area ##### -->
+                        <div class="single-widget-area">
+                            <form action="#" method="get" class="search-form">
+                                <input type="search" name="search" id="widgetsearch" placeholder="Search...">
+                                <button type="submit"><i class="icon_search"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- ##### Single Widget Area ##### -->
+                        <div class="single-widget-area">
+                            <!-- Title -->
+                            <div class="widget-title">
+                                <h4>Recent post</h4>
+                            </div>
+
+                            <!-- Single Latest Posts -->
+                            <div class="single-latest-post d-flex align-items-center">
+                                <div class="post-thumb">
+                                    <img src="img/bg-img/30.jpg" alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="#" class="post-title">
+                                        <h6>New Harris Bugg design for Bridgewater</h6>
+                                    </a>
+                                    <a href="#" class="post-date">20 Jun 2018</a>
+                                </div>
+                            </div>
+
+                            <!-- Single Latest Posts -->
+                            <div class="single-latest-post d-flex align-items-center">
+                                <div class="post-thumb">
+                                    <img src="img/bg-img/31.jpg" alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="#" class="post-title">
+                                        <h6>The designers will create a new kitchen garden</h6>
+                                    </a>
+                                    <a href="#" class="post-date">20 Jun 2018</a>
+                                </div>
+                            </div>
+
+                            <!-- Single Latest Posts -->
+                            <div class="single-latest-post d-flex align-items-center">
+                                <div class="post-thumb">
+                                    <img src="img/bg-img/32.jpg" alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="#" class="post-title">
+                                        <h6>SGD Members win Best of Houzz Design Award</h6>
+                                    </a>
+                                    <a href="#" class="post-date">20 Jun 2018</a>
+                                </div>
+                            </div>
+
+                            <!-- Single Latest Posts -->
+                            <div class="single-latest-post d-flex align-items-center">
+                                <div class="post-thumb">
+                                    <img src="img/bg-img/33.jpg" alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="#" class="post-title">
+                                        <h6>Shepherding Vegetables From Roof to Restaurant</h6>
+                                    </a>
+                                    <a href="#" class="post-date">20 Jun 2018</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ##### Single Widget Area ##### -->
+                        <div class="single-widget-area">
+                            <!-- Title -->
+                            <div class="widget-title">
+                                <h4>Tag Cloud</h4>
+                            </div>
+                            <!-- Tags -->
+                            <ol class="popular-tags d-flex flex-wrap">
+                                <li><a href="#">PLANTS</a></li>
+                                <li><a href="#">NEW PRODUCTS</a></li>
+                                <li><a href="#">CACTUS</a></li>
+                                <li><a href="#">DESIGN</a></li>
+                                <li><a href="#">NEWS</a></li>
+                                <li><a href="#">TRENDING</a></li>
+                                <li><a href="#">VIDEO</a></li>
+                                <li><a href="#">GARDEN DESIGN</a></li>
+                            </ol>
+                        </div>
+
+                        <!-- ##### Single Widget Area ##### -->
+                        <div class="single-widget-area">
+                            <!-- Title -->
+                            <div class="widget-title">
+                                <h4>BEST SELLER</h4>
+                            </div>
+
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">Cactus Flower</a>
+                                    <p>$10.99</p>
+                                    <div class="ratings">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">Tulip Flower</a>
+                                    <p>$11.99</p>
+                                    <div class="ratings">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="img/bg-img/34.jpg" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">Recuerdos Plant</a>
+                                    <p>$9.99</p>
+                                    <div class="ratings">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1>Offrejardins list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idoffrejardin</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Localisation</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offreJardin in offreJardins %}
+            <tr>
+                <td><a href="{{ path('offrejardin_show', { 'idOffreJardin': offreJardin.idOffreJardin }) }}">{{ offreJardin.idOffreJardin }}</a></td>
+                <td>{% if offreJardin.dateDebut %}{{ offreJardin.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if offreJardin.dateFin %}{{ offreJardin.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ offreJardin.localisation }}</td>
+                <td>{{ offreJardin.prix }}</td>
+                <td>{{ offreJardin.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('offrejardin_show', { 'idOffreJardin': offreJardin.idOffreJardin }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('offrejardin_edit', { 'idOffreJardin': offreJardin.idOffreJardin }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('offrejardin_new') }}">Create a new offreJardin</a>
+        </li>
+    </ul>
+{% endblock %}

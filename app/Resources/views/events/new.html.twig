@@ -1,0 +1,38 @@
+{% extends 'Admin.html.twig' %}
+{% block selfdesign %}
+<style>
+    #xDDd{
+        font-weight: bold;
+        margin:auto;
+        padding:100px;
+    }
+    #xDDd input{
+        font-weight: bold;
+        margin:auto;
+        padding:10px;
+    }
+    div.container4 {
+        height: 10em;
+        position: relative }
+    div.container4 p {
+        margin: 0;
+        background: yellow;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+</style>
+{% endblock %}
+{% block body %}
+ <center><h1>Event creation</h1></center>
+<div id="xDDd" class="container4">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Create" onclick="alert('Evenement Ajouté avec Succées!!');"/>
+    {{ form_end(form) }}
+</div>
+
+
+
+{% endblock %}

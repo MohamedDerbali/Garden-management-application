@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %} Compte verifie {% endblock %}
+{% block body %}
+
+
+
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{{ asset('login/images/icons/favicon.ico') }}"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animate/animate.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/css-hamburgers/hamburgers.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/animsition/css/animsition.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/select2/select2.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/vendor/daterangepicker/daterangepicker.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('login/css/main.css') }}">
+
+
+        <!--===============================================================================================-->
+
+
+
+<div class="limiter">
+        <div class="container-login100">
+                <div class="wrap-login100">
+                        <div class="login100-form-title" style="background-image: url('{{ asset('login/images/bg-01.jpg') }}');">
+					<span class="login100-form-title-1">
+					{% block fos_user_content %}
+                            <h1 style="color: white;font-size: 19px">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h1><i class="icon-thumbs-up-alt"></i>
+    {% if targetUrl %}
+                            <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+                    {% endif %}
+
+                    {% endblock fos_user_content %}
+					</span>
+
+                        </div>
+
+                        <center>
+
+                        </center>
+                </div>
+        </div>
+
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/animsition/js/animsition.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/bootstrap/js/popper.js') }}"></script>
+        <script src="{{ asset('login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/select2/select2.min.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/daterangepicker/moment.min.js') }}"></script>
+        <script src="{{ asset('login/vendor/daterangepicker/daterangepicker.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/vendor/countdowntime/countdowntime.js') }}"></script>
+        <!--===============================================================================================-->
+        <script src="{{ asset('login/js/main.js') }}"></script>
+    {#//for signup#}
+        <script src="{{ asset('js/Signup/verif.js') }}"></script></div>
+
+{% endblock %}
